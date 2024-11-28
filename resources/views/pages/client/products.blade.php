@@ -2,7 +2,7 @@
 @section('content')
     @include('components.client.alert')
 
-    <div class="container">
+    <div class="container mt-5">
         <div class="row">
             <!-- Danh mục sản phẩm cho desktop -->
             <div class="col-md-3 col-sm-6 d-none d-md-block border-end">

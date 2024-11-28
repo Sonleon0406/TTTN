@@ -81,6 +81,10 @@
                                                 <input class="form-check-input" type="radio" id="inactive" name="status" value="0" @if ($post->status == 0) checked @endif>
                                                 <!-- Chọn trạng thái đã được lưu trong bài viết -->
                                                 <label class="form-check-label" for="inactive">Ẩn</label>
+
+                                                @error('status')
+                                                    <span class="text-danger">{{ $message }}</span>
+                                                @enderror
                                             </div>
                                         </div>
                                         <div class="d-flex justify-content-end">

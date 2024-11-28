@@ -13,9 +13,9 @@
         <div class="row">
             <div class="col-sm-6 col-xs-12">
                 <div class="fshop-contact-form">
-                    <h4>Cửa hàng điện thoại di đông KhanhUD Mobile</h4>
-                    <p>93B, Mạc Thiên Tích, Xuân Khánh, Ninh Kiều Cần Thơ</p>
-                    <p>Số điện thoại: 0342585307</p>
+                    <h4>Cửa hàng điện thoại di động FPT SHOP</h4>
+                    <p>Ninh Kiều, Ninh Kiều Cần Thơ</p>
+                    <p>Số điện thoại: 0336216546</p>
                     <form id="form-contact" class="form" novalidate="novalidate">
                         <p>Đừng ngần ngại, hãy liên hệ ngay với chúng tôi </p>
                         <p>

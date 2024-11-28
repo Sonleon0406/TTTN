@@ -90,13 +90,13 @@
                                     @foreach ($variant->attributes as $attribute)
                                         @if ($attribute->attribute->attribute_name == 'Màu' && !in_array($attribute->attribute_value, $displayedColors))
                                             <div class="col-md-2 col-3 mb-3">
-                                                <div class="option-group">
+                                                <div class="option-group" style="width: 50px">
                                                     <div class="color-option" style="font-weight: 500"
                                                         data-color="{{ $attribute->attribute_value }}">
                                                         <img src="{{ asset('images/' . $variant->image_url) }}"
                                                             class="w-100" alt="{{ $variant->image_url }}">
-                                                        <span>{{ $attribute->attribute_value }}</span>
-                                                    </div>
+                                                            <span>{{ $attribute->attribute_value }}</span>
+                                                    </div>                                            
                                                 </div>
                                             </div>
                                             @php

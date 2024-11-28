@@ -153,12 +153,13 @@ class PostsController extends Controller
      */
     public function update(Request $request, $id)
     {
+        // dd($request->all());
         $request->validate([
             'title' => 'required|max:255',
             'user_id' => 'required|exists:users,id',
             'post_category_id' => 'required|exists:post_categories,id',
             'content' => 'required',
-            'description' => 'required',
+            // 'description' => 'required',
             'image' => 'nullable|image',
             'status' => 'required|in:0,1',
         ], [
@@ -169,7 +170,7 @@ class PostsController extends Controller
             'post_category_id.required' => 'Vui lòng chọn một danh mục bài viết.',
             'post_category_id.exists' => 'Danh mục bài viết không hợp lệ.',
             'content.required' => 'Nội dung không được để trống.',
-            'description.required' => 'mô tả ngắn không được để trống.',
+            // 'description.required' => 'mô tả ngắn không được để trống.',
             'image.image' => 'Tập tin bạn chọn không phải là hình ảnh.',
             'status.required' => 'Vui lòng chọn trạng thái của bài viết.',
             'status.in' => 'Trạng thái bài viết không hợp lệ.',
@@ -190,7 +191,7 @@ class PostsController extends Controller
         $post->user_id = $request->user_id;
         $post->post_category_id = $request->post_category_id;
         $post->content = $request->content;
-        $post->description = $request->description;
+        // $post->description = $request->description;
         $post->status = $request->status;
         $post->save();
         // Redirect back to the index page with a success message

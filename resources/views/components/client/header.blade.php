@@ -5,8 +5,8 @@
                 <!-- LOGO -->
                 <div class="col-xl-3 col-lg-3 col-md-12 p-0">
                     <a href="/" class="logo text-decoration-none text-light">
-                        <h3 class="ms-1 font-weight-bold text-white" class="text-white">KhanhUD</span><span
-                            style="color: #D10024;">Mobile</h3>
+                        <h3 class="ms-1 font-weight-bold text-white" class="text-white">FPT</span><span
+                            style="color: #D10024;">SHOP</h3>
                     </a>
                 </div>
                 <!-- /LOGO -->

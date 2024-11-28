@@ -41,6 +41,10 @@ class AccountController extends Controller
         // Find the user by ID
         $user = User::findOrFail($id);
 
+        if($user->email != $request->email) {
+            return redirect()->route('account.index')->with('error', 'Không được phép thay đổi email vui lòng liên hệ admin.');
+        }
+
         // Check if the email has been changed
         if ($request->email !== $user->email) {
             // If email has been changed, validate uniqueness

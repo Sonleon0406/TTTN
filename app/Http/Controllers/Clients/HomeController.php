@@ -53,7 +53,7 @@ class HomeController extends Controller
         $banners = Banner::where('status', 1)->get();
 
         return view('pages.client.home', [
-            'title' => 'Khanh Mobile | Điện Thoại Cần Thơ',
+            'title' => 'FPT Shop Điện Thoại Chính hãng',
             'banners' => $banners,
             'breadcrumbs' => $breadcrumbs,
             'newProducts' => $newProducts,

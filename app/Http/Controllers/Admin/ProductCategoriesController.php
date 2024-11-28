@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\ProductCategory;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class ProductCategoriesController extends Controller
 {
@@ -49,8 +50,13 @@ class ProductCategoriesController extends Controller
         $productCategory = new ProductCategory();
         $productCategory->category_name = $validatedData['category_name'];
         $productCategory->status = $validatedData['status'];
+        $productCategory->slug = Str::slug($productCategory->category_name);
         $productCategory->save();
-    
+
+        // Sau khi save() thì ID mới tồn tại, nên cập nhật lại slug
+        $productCategory->slug = Str::slug($productCategory->category_name) . '-' . $productCategory->id;
+        $productCategory->save();
+            
         return redirect()->route('productCategories.index')->with('success', 'Danh mục đã được thêm mới thành công.');
     }
 

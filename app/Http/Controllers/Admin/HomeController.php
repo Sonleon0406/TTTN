@@ -16,7 +16,7 @@ class HomeController extends Controller
     public function index(Request $request)
     {
         $totalUsers = User::count();
-        $title = "Báo cáo Doanh Thu | Admin KhanhUD Mobile";
+        $title = "Báo cáo Doanh Thu";
         $filterBy = $request->query('filter_by', 'day');
         $startDate = $request->query('start_date', Carbon::now()->startOfDay()->toDateString());
         $endDate = $request->query('end_date', Carbon::now()->endOfDay()->toDateString());
@@ -126,15 +126,24 @@ class HomeController extends Controller
             ->get();
 
         // Top 10 sản phẩm bán chạy trong khoảng thời gian
-        $topSellingProducts = OrderItem::selectRaw('products.id, products.name,  products.image_url, SUM(order_items.quantity) as total_quantity')
-            ->join('products', 'order_items.product_id', '=', 'products.id')
-            ->join('orders', 'order_items.order_id', '=', 'orders.id')
-            ->where('orders.status', 'completed')
-            ->whereBetween('orders.created_at', [$startDate, $endDate])
-            ->groupBy('products.id', 'products.name',) // Thêm cột products.name vào GROUP BY
-            ->orderBy('total_quantity', 'desc')
-            ->take(10)
-            ->get();
+        // $topSellingProducts = OrderItem::selectRaw('products.id, products.name,  products.image_url, SUM(order_items.quantity) as total_quantity')
+        //     ->join('products', 'order_items.product_id', '=', 'products.id')
+        //     ->join('orders', 'order_items.order_id', '=', 'orders.id')
+        //     ->where('orders.status', 'completed')
+        //     ->whereBetween('orders.created_at', [$startDate, $endDate])
+        //     ->groupBy('products.id', 'products.name',) // Thêm cột products.name vào GROUP BY
+        //     ->orderBy('total_quantity', 'desc')
+        //     ->take(10)
+        //     ->get();
+        $topSellingProducts = OrderItem::selectRaw('products.id, products.name, products.image_url, SUM(order_items.quantity) as total_quantity')
+                ->join('products', 'order_items.product_id', '=', 'products.id')
+                ->join('orders', 'order_items.order_id', '=', 'orders.id')
+                ->where('orders.status', 'completed')
+                ->whereBetween('orders.created_at', [$startDate, $endDate])
+                ->groupBy('products.id', 'products.name', 'products.image_url') // Add products.image_url to GROUP BY
+                ->orderBy('total_quantity', 'desc')
+                ->take(10)
+                ->get();
 
 
 

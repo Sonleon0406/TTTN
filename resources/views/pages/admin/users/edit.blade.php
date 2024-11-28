@@ -43,8 +43,8 @@
                                         <div class="mb-3">
                                             <label for="usertype" class="form-label">Loại tài khoản</label>
                                             <select class="form-select" id="usertype" name="usertype">
-                                                <option value="1" {{ $user->usertype == 1 ? 'selected' : '' }}>Khách hàng</option>
-                                                <option value="2" {{ $user->usertype == 2 ? 'selected' : '' }}>Quản trị</option>
+                                                <option value="1" {{ $user->usertype == 2 ? 'selected' : '' }}>Khách hàng</option>
+                                                <option value="2" {{ $user->usertype == 1 ? 'selected' : '' }}>Quản trị</option>
                                             </select>
                                             @error('usertype')
                                                 <span class="text-danger">{{ $message }}</span>

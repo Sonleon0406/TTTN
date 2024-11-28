@@ -27,6 +27,14 @@
                         <form method="POST"  action="{{ route('account.update', $user->id) }}" enctype="multipart/form-data">
                             @csrf
                             <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" name="email" disabled
+                                    value="{{ $user->email }} ">
+                                @error('email')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div class="mb-3">
                                 <label for="name" class="form-label">Họ và tên</label>
                                 <input type="text" class="form-control" id="name" name="name"
                                     value="{{ $user->name }}">
@@ -34,14 +42,7 @@
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="email" name="email" readonly
-                                    value="{{ $user->email }} ">
-                                @error('email')
-                                    <span class="text-danger">{{ $message }}</span>
-                                @enderror
-                            </div>
+                            
                             <div class="mb-3">
                                 <label for="phone" class="form-label">Số điện thoại</label>
                                 <input type="text" class="form-control" id="phone" name="phone"

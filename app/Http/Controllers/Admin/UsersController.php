@@ -33,7 +33,7 @@ class UsersController extends Controller
         $users = $query->paginate(10);
 
         return view('pages.admin.users.index', [
-            'title' => 'Danh sách tài khoản | Admin KhanhUD Mobile',
+            'title' => 'Danh sách tài khoản',
             'users' => $users
         ]);
     }

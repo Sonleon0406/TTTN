@@ -398,7 +398,7 @@ nav {
 .color-option {
   display: inline-block;
   cursor: pointer;
-  border: 1px solid transparent;
+  border: 0.5px solid #d1d5db;
   border-radius: 5px;
   text-align: center;
 }
@@ -406,7 +406,7 @@ nav {
 .option {
   display: inline-block;
   cursor: pointer;
-  border: 1px solid transparent;
+  border: 1px solid #d1d5db;
   padding: 5px;
   border-radius: 5px;
   text-align: center;
